@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mynavigation"
+    app:startDestination="@id/AFragment">
+
+    <fragment
+        android:id="@+id/oneFragment"
+        android:name="com.example.practicetest.fragments.OneFragment"
+        android:label="fragment_one"
+        tools:layout="@layout/fragment_one" >
+        <action
+            android:id="@+id/OneFragment_To_FragmentSecond"
+            app:destination="@id/twoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/twoFragment"
+        android:name="com.example.practicetest.fragments.SecondFragment"
+        android:label="fragment_two"
+        tools:layout="@layout/fragment_second" >
+        <action
+            android:id="@+id/FragmentSecond_To_OneFragment"
+            app:destination="@id/oneFragment" />
+        <action
+            android:id="@+id/FragmentSecond_To_FragmentThird"
+            app:destination="@id/thirdFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="com.example.practicetest.fragments.ThirdFragment"
+        android:label="fragment_third"
+        tools:layout="@layout/fragment_third" >
+        <action
+            android:id="@+id/FragmentThird_To_FragmentSecond"
+            app:destination="@id/twoFragment" />
+        <action
+            android:id="@+id/FragmentThird_To_FragmentForth"
+            app:destination="@id/forthFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/forthFragment"
+        android:name="com.example.practicetest.fragments.ForthFragment"
+        android:label="fragment_forth"
+        tools:layout="@layout/fragment_forth" >
+        <action
+            android:id="@+id/FragmentForth_To_FragmentThird"
+            app:destination="@id/thirdFragment" />
+        <action
+            android:id="@+id/FragmentForth_To_FragmentFive"
+            app:destination="@id/fiveFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fiveFragment"
+        android:name="com.example.practicetest.fragments.FiveFragment"
+        android:label="fragment_five"
+        tools:layout="@layout/fragment_five" >
+        <action
+            android:id="@+id/FragmentFive_To_FragmentForth"
+            app:destination="@id/forthFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/AFragment"
+        android:name="com.example.practicetest.mypractice.AFragment"
+        android:label="fragment_a"
+        tools:layout="@layout/fragment_a" >
+        <action
+            android:id="@+id/Fragment_A_To_Fragment_B"
+            app:destination="@id/BFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/BFragment"
+        android:name="com.example.practicetest.mypractice.BFragment"
+        android:label="fragment_b"
+        tools:layout="@layout/fragment_b" >
+        <action
+            android:id="@+id/Fragment_B_To_Fragment_A"
+            app:destination="@id/AFragment" />
+    </fragment>
+</navigation>

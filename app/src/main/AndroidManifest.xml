@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:name=".applicationclass.MyApp"
@@ -16,7 +18,7 @@
         android:theme="@style/Theme.PracticeTest"
         tools:targetApi="31">
         <activity
-            android:name=".questions.QuestionActivity"
+            android:name=".map.GoogleMapActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,10 +27,57 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".googlesignin.LoginActivity"
             android:exported="true">
 
         </activity>
+        <activity
+            android:name=".databinding.DataBindingActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".mypractice.CheckingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".mypractice.MyPracticeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".questions.ImageTestActivity"
+            android:exported="true" />
+        <activity
+            android:name=".questions.QuestionActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+
+        <service android:name=".services.MyService" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+
+        <service
+            android:name=".pushnotification.MyPushNotificationClass"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_stat_name" />
+        <!-- Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more. -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/common_google_signin_btn_text_light" />
     </application>
 
 </manifest>

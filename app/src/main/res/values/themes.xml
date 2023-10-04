@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.PracticeTest" parent="Base.Theme.PracticeTest" />
+
+
+    <style name="myCustomProgressColor">
+        <item name="colorAccent">#673AB7</item>
+
+    </style>
 </resources>
